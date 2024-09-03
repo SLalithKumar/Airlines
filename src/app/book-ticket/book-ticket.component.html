@@ -1,0 +1,133 @@
+<app-user-dashboard></app-user-dashboard>
+<br>
+<h3>Book Tickets</h3><br>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Airlines Name</th>
+      <th scope="col">Flight Number</th>
+      <th scope="col">Seats in Economy Class</th>
+      <th scope="col">Seats in Business Class</th>
+      <th scope="col">Source</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Date Of Flight</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flight of flights">
+      <td>{{flight.airlines_name}}</td>
+      <td>{{flight.flight_number}}</td>
+      <td>{{flight.no_of_seats_economy_class}}</td>
+      <td>{{flight.no_of_seats_business_class}}</td>
+      <td>{{flight.source}}</td>
+      <td>{{flight.destination}}</td>
+      <td>{{flight.date_of_flight}}</td>
+      <td>
+        <button class="btn btn-secondary" (click)="getFlight(flight.flight_number)" type="button" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Choose</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Booking Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row mb-3">
+            <label for="user_id" class="col-sm-2 col-form-label">User ID</label>
+            <div class="col-sm-10">
+              <input type="number" name="userid" [(ngModel)]="booking.user_id" class="form-control" id="user_id">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="user_name" class="col-sm-2 col-form-label">User Name</label>
+            <div class="col-sm-10">
+              <input type="text" name="username" [(ngModel)]="booking.user_name" class="form-control" id="user_name">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="flight_number" class="col-sm-2 col-form-label">Flight Number</label>
+            <div class="col-sm-10">
+              <input type="number" name="flightnumber" [(ngModel)]="booking.flight_number" class="form-control"
+                id="flight_number">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="airlines_name" class="col-sm-2 col-form-label">Airlines Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="airlinesname" [(ngModel)]="booking.airlines_name"
+                id="airlines_name">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="source" class="col-sm-2 col-form-label">Source</label>
+            <div class="col-sm-10">
+              <input type="text" name="source" [(ngModel)]="booking.source" class="form-control" id="source">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="destination" class="col-sm-2 col-form-label">Destination</label>
+            <div class="col-sm-10">
+              <input type="text" name="destination" [(ngModel)]="booking.destination" class="form-control"
+                id="destination">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="date_of_flight" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-10">
+              <input type="date" name="date" [(ngModel)]="booking.date_of_travel" class="form-control" id="date">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="departure_time" class="col-sm-2 col-form-label">Departure Time</label>
+            <div class="col-sm-10">
+              <input type="time" name="departuretime" [(ngModel)]="booking.departure_time" class="form-control"
+                id="departure_time">
+            </div>
+          </div>
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Class</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" name="classseats" [(ngModel)]="booking.class_seats" type="radio"
+                  name="gridRadios" id="gridRadios1" value="Economy" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Economy
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" name="classseats" [(ngModel)]="booking.class_seats" type="radio"
+                  name="gridRadios" id="gridRadios2" value="Business">
+                <label class="form-check-label" for="gridRadios2">
+                  Business
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <div class="row mb-3">
+            <label for="no_of_passengers" class="col-sm-2 col-form-label">No of Passengers</label>
+            <div class="col-sm-10">
+              <input type="number" name="noofpassengers" [(ngModel)]="booking.no_of_passengers" class="form-control"
+                id="no_of_passengers">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addBooking()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <a routerLink="/userfeedback"><button type="button" class="btn btn"
+      style="background-color: black; color: white;">Give Feedback</button></a>
+</div>

@@ -1,0 +1,14 @@
+button{
+    color: white;
+    background: transparent;
+    font-size: 20px;
+    padding: 10px 10px;
+	margin: 10px 0;
+	width: 70%;
+}
+.container{
+    background-position-y: top;
+}
+body{
+    background-image: url('https://static.toiimg.com/photo/78660328.cms');
+}

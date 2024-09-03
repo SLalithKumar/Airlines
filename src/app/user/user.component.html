@@ -1,0 +1,19 @@
+
+
+<div class="position-absolute top-50 start-50 translate-middle mt-4">
+<div *ngIf="page=='userWelcome'"  >
+    <img src="assets/bg.jpg" height="200">
+    <h1 style="color:black;letter-spacing: .4em;" class="text-center">USER</h1>
+    <button style="background-color: cadetblue;" (click)="login()" class="btn btn-info">Login</button>
+    <button style=" background-color:slategrey;" routerLink="/userregistration" class="btn btn-info">Register</button>
+    <button style="background-color: crimson;" routerLink="/welcome" class="btn btn-warning">Back</button>
+</div>
+</div>
+<br>
+<br>
+<div style="color: black;" class="fixed-bottom">
+    <div style="background: transparent;">Aeroméxico	| AM1	AMX1 |	Mexico City	<-> Madrid | Boeing 787 :arrives at 9am </div>
+    <div  style="background: transparent;">American Eagle |	CP1	CPZ1	|San Francisco	<->Los Angeles	|	Embraer 175 :delayed due to bad weather</div>
+    <div  style="background: transparent;">Lufthansa|	LH1	DLH1|	Hamburg<->	Frankfurt :depature at 11:30 am	</div>
+  </div>
+

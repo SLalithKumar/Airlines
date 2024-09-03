@@ -1,0 +1,53 @@
+<app-user-dashboard></app-user-dashboard>
+<div class="container center-div">
+    <pre></pre>
+    <h4>SUBMIT FEEDBACK</h4>
+    <form #f="ngForm">
+        <div class="form-group">
+            <label for="name"><b>Name</b></label>
+            <input class="form-control" type="text" [(ngModel)]="feed.user_name" placeholder="Enter Name" name="name"
+                id="name" #name="ngModel" required>
+            <span class="form-control" *ngIf="name.invalid && name.touched">Enter your name</span>
+        </div>
+
+        <pre></pre>
+
+        <pre></pre>
+        <div class="form-group">
+            <label for="rating"><b>Rating&emsp;</b></label>
+            <select name="rating" #ratings="ngModel" [(ngModel)]="feed.ratings" id="rating" required>
+                <option value="select">Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <span class="form-control" *ngIf="ratings.invalid && ratings.touched">Select the rating</span>
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+            <label for="travel_experience"><b>Travel Experience</b></label>
+            <textarea class="form-control" [(ngModel)]="feed.travel_experience" type="text"
+                placeholder="Give your travel experience" name="travel_experience" id="travel_experience"
+                #travel_experience="ngModel" required></textarea>
+            <span class="form-control" *ngIf="travel_experience.invalid && travel_experience.touched">Enter the
+                Feedback!</span>
+        </div>
+
+        <pre></pre>
+
+        <div class="form-group">
+            <label for="suggestion"><b>Suggestions</b></label>
+            <textarea class="form-control" [(ngModel)]="feed.suggestion" type="text" placeholder="Give your suggestions"
+                name="suggestion" id="suggestion" #suggestion="ngModel" required></textarea>
+            <span class="form-control" *ngIf="suggestion.invalid && suggestion.touched">Enter the Feedback!</span>
+        </div>
+
+        <pre></pre>
+
+        <button type="submit" [disabled]="f.invalid" class="btn btn-success" (click)="feedbacksubmit()" required>Submit</button>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <h2 style="color:black;letter-spacing: .4em;" class="text-center">Admin</h2>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-auto">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row-g-3; form-control">
+
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup" class="row g-3 align-items-center">
+          <div class="">
+            <label class="col-form-label">User Id</label>
+          </div>
+          <div class="col-auto">
+            <input required #id="ngModel" [(ngModel)]="admin.id" id="adminid" type="number" name="adminid"
+              class="form-control">
+            <span class="help-block" *ngIf="id.invalid && id.touched" class="error">Required field</span>
+          </div>
+        </div>
+        <br>
+        <div class="row sm-3 align-items-center">
+          <div class="">
+            <label for="inputPassword6" class="col-form-label">Password</label>
+          </div>
+          <div class="col-auto">
+            <input required type="password" #pw="ngModel" [(ngModel)]="admin.password" class="form-control"
+              name="password">
+            <span class="help-block" style="color: red;" *ngIf="pw.invalid && pw.touched">Required field</span>
+          </div>
+          <div class="col-auto">
+
+          </div>
+        </div>
+      </form>
+      <form class="row mx">
+        <div style="vertical-align: top; "><button style="background-color: skyblue;" class="btn btn-primary"
+            (click)="home()">Login</button></div>
+        <div>
+          <button style=" background-color:black;  padding: auto;" class="btn btn-white" (click)="back()">Back</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <div style="color: black;" class="fixed-bottom">
+    <div style="background: transparent;">Aeroméxico | AM1 AMX1 | Mexico City <-> Madrid | Boeing 787 :arrives at 9am
+    </div>
+    <div style="background: transparent;">American Eagle | CP1 CPZ1 |San Francisco <->Los Angeles | Embraer 175 :delayed
+        due to bad weather</div>
+    <div style="background: transparent;">Lufthansa| LH1 DLH1| Hamburg<-> Frankfurt :depature at 11:30 am </div>
+  </div>
+
+
+</div>

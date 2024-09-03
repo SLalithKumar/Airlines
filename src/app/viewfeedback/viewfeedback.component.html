@@ -1,0 +1,25 @@
+<app-admin-dashboard></app-admin-dashboard>
+
+<div class="container">
+    <table class="table table-dark mt-3">
+        <thead>
+            <tr>
+                <th scope="col">Feedback ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Ratings</th>
+                <th scope="col">Suggestion</th>
+                <th scope="col">Travel Experience</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ref of feedback;">
+                <td>{{ref.feedback_id}}</td>
+                <td>{{ref.user_name}}</td>
+                <td>{{ref.ratings}}</td>
+                <td>{{ref.suggestion}} </td>
+                <td>{{ref.travel_experience}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

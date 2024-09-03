@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+head,body{
+  /*background-image: url('https://economictimes.indiatimes.com/thumb/msid-80063021,width-1600,height-900,resizemode-4/industry/transportation/airlines-/-aviation/india-uk-flight-services-to-resume-from-january-8.jpg');*/
+  
+}
+
+.button{
+    
+    font-size: 10px;
+    background: cornflowerblue;
+}

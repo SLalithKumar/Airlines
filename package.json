@@ -1,5 +1,5 @@
 {
-  "name": "agro",
+  "name": "Airlines",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,8 +18,14 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "angular-datatables": "^6.0.0",
+    "datatables.net": "^1.10.25",
+    "datatables.net-buttons": "^2.0.0",
+    "datatables.net-buttons-dt": "^2.0.0",
+    "datatables.net-dt": "^1.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
+    "xlsx": "^0.17.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

@@ -1,0 +1,18 @@
+button{
+    color:white;
+    background: transparent;
+    font-size: 20px;
+    padding: 10px 10px;
+	margin: 10px 0;
+	width: 20%;
+}
+
+input.ng-invalid{
+    border-left: 5px solid red;
+}
+input.ng-valid{
+    border-left: 5px solid blue;
+}
+.error{
+    color: red;
+}

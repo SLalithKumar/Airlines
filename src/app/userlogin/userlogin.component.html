@@ -1,0 +1,32 @@
+<div class=" col-sm-6 justify-content-center">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <div class="form-group">
+      <label>Email address</label>
+      <input type="email" required [(ngModel)]="user.email" #email="ngModel" ngModel class="form-control" name="useremail"
+        placeholder="name@example.com">
+      <span *ngIf="email.invalid && email.touched" class="error">Required field</span>
+    </div>
+    <div class=" form-group">
+      <label>Password</label>
+      <input required type="password" #password="ngModel"  [(ngModel)]="user.password" class="form-control" name="password" placeholder="Password">
+      <span *ngIf="password.invalid && password.touched" class="error">Required field</span>
+    </div>
+  </form><pre></pre>
+
+  
+  <div class="form-floating mb-3">
+    <button type="submit" style="width: 130px; background-color: cadetblue;" (click)="userloggedIn()"
+      class="btn btn-info">Login</button>
+  </div>
+  
+
+  <div class="form-floating mb-3">
+    <button style="width: 130px; color: white; " class="btn btn-dark" (click)="back()">Back</button>
+  </div>
+
+</div>
+<div style="color: black;" class="fixed-bottom">
+  <div style="background: transparent;">Aeroméxico	| AM1	AMX1 |	Mexico City	<-> Madrid | Boeing 787 :arrives at 9am </div>
+  <div  style="background: transparent;">American Eagle |	CP1	CPZ1	|San Francisco	<->Los Angeles	|	Embraer 175 :delayed due to bad weather</div>
+  <div  style="background: transparent;">Lufthansa|	LH1	DLH1|	Hamburg<->	Frankfurt :depature at 11:30 am	</div>
+</div>

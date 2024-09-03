@@ -1,0 +1,97 @@
+<app-admin-dashboard></app-admin-dashboard>
+
+  <div class="d-flex ">
+    <div class="col-md-4"><br><h3 >Flight Schedule</h3><br></div>
+</div>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Flight Number</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Departure Time</th>
+            <th scope="col">Cost of Economy Class</th>
+            <th scope="col">Cost of Business Class</th>
+            <th scope="col">Days</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let schedule of schedules">
+            <td>{{schedule.flight_number}}</td>
+            <td>{{schedule.source}}</td>
+            <td>{{schedule.destination}}</td>
+            <td>{{schedule.arrival_time}}</td>
+            <td>{{schedule.departure_time}}</td>
+            <td>{{schedule.cost_of_economy_class}}</td>
+            <td>{{schedule.cost_of_business_class}}</td>
+            <td>{{schedule.days}}</td>
+            <td>
+                <button  class="btn btn-secondary" (click)="getSchedule(schedule.flight_number)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+  
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Schedule Details</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                    <label for="FlightNumber" class="form-label">Flight Number</label>
+                    <input type="number" [(ngModel)]="schedule2.flight_number" #flightnumber="ngModel" name="flight_number" class="form-control" id="FlightNumber">
+                </div>
+                <div class="mb-3">
+                  <label for="Source" class="form-label">Source</label>
+                  <input type="text" [(ngModel)]="schedule2.source" name="source" #source="ngModel" class="form-control" id="Source" >
+                </div>
+                <div class="mb-3">
+                    <label for="Destination" class="form-label">Destination</label>
+                    <input type="text" [(ngModel)]="schedule2.destination" #destination="ngModel" name="destination" class="form-control" id="Destination" >
+                </div>
+                <div class="mb-3">
+                    <label for="ArrivalTime" class="form-label">Arrival Time</label>
+                    <input type="Time" [(ngModel)]="schedule2.arrival_time" #arrivaltime="ngModel" name="arrival_time" class="form-control" id="ArrivalTime" >
+                </div>
+                <div class="mb-3">
+                    <label for="DepartureTime" class="form-label">Departure Time</label>
+                    <input type="Time" [(ngModel)]="schedule2.departure_time" #departuretime="ngModel" name="departure_time" class="form-control" id="DepartureTime" >
+                </div>
+                <div class="mb-3">
+                    <label for="CostOfEconomy" class="form-label">Cost of Economy Class</label>
+                    <input type="number" [(ngModel)]="schedule2.cost_of_economy_class" #costofeconomyclass="ngModel" name="cost_of_economy_class" class="form-control" id="CostOfEconomy">
+                </div>
+                <div class="mb-3">
+                    <label for="CostOfBusiness" class="form-label">Cost of Business Class</label>
+                    <input type="number" [(ngModel)]="schedule2.cost_of_business_class" #costofbusinessclass="ngModel" name="cost_of_business_class" class="form-control" id="CostOfBusiness">
+                </div>
+                <div class="mb-3">
+                    <label for="Days" class="form-label">Days</label>
+                    <input type="text" [(ngModel)]="schedule2.days" #days="ngModel" name="days" class="form-control" id="Days">
+                </div>
+                <div class="mb-3">
+                    <label for="date_of_flight" class="form-label">Date of Flight</label>
+                    <input type="date" [(ngModel)]="schedule2.date_of_flight" #dateofflight="ngModel" name="date_of_flight" class="form-control" id="date_of_flight">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button"  (click)="updateSchedule()" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+
+
+

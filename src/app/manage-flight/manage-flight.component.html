@@ -1,0 +1,134 @@
+<app-admin-dashboard></app-admin-dashboard>
+<div class="d-flex ">
+    <div class="col-md-4"><br><h3 >Flight Details</h3><br></div>
+    <div class="col-md-4 ms-auto"><br><button type="button"  class="btn btn-success " data-bs-toggle="modal" data-bs-target="#exampleModal">Add Flight</button><br></div>
+</div>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Airlines Name</th>
+            <th scope="col">Flight Number</th>
+            <th scope="col">Flight Model</th>
+            <th scope="col">Flight Type</th>
+            <th scope="col">Seats in Economy Class</th>
+            <th scope="col">Seats in Business Class</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights">
+            <td>{{flight.airlines_name}}</td>
+            <td>{{flight.flight_number}}</td>
+            <td>{{flight.flight_model}}</td>
+            <td>{{flight.flight_type}}</td>
+            <td>{{flight.no_of_seats_economy_class}}</td>
+            <td>{{flight.no_of_seats_business_class}}</td>
+            <td>
+                <button  class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="getFlight(flight.flight_number)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Flight Details</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+        </div>
+        <div class="modal-body">
+            <form >
+                <div class="mb-3">
+                  <label for="AirlinesName" class="form-label">Airlines Name</label>
+                  <input type="text" [(ngModel)]="flight1.airlines_name" name="airlines_name" class="form-control" id="AirlinesName" >
+                </div>
+                <div class="mb-3">
+                  <label for="FlightNumber" class="form-label">Flight Number</label>
+                  <input type="number" [(ngModel)]="flight1.flight_number" name="flight_number" class="form-control" id="FlightNumber">
+                </div>
+                <div class="mb-3">
+                    <label for="inputState" class="form-label">Flight Model</label>
+                    <select id="inputState" [(ngModel)]="flight1.flight_model" name="flight_model" class="form-select">
+                      <option selected>Choose...</option>
+                      <option>Boeing 777</option>
+                      <option>Boeing 760</option>
+                      <option>Boeing 805</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="inputState" class="form-label">Flight Type</label>
+                    <select id="inputState" [(ngModel)]="flight1.flight_type" name="flight_type" class="form-select">
+                      <option selected>Choose...</option>
+                      <option>International</option>
+                      <option>Domestic</option>
+                    </select>
+                </div> 
+                <div class="mb-3">
+                    <label for="SeatsInEconomy" class="form-label">No of Seats in Economy Class</label>
+                    <input type="number" [(ngModel)]="flight1.no_of_seats_economy_class" name="no_of_seats_economy_class" class="form-control" id="SeatsInEconomy" >
+                </div>
+                <div class="mb-3">
+                    <label for="SeatsInBusiness" class="form-label">No of Seats in Business Class</label>
+                    <input type="number" [(ngModel)]="flight1.no_of_seats_business_class" name="no_of_seats_business_class" class="form-control" id="SeatsInBusiness" >
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="addFlight()" data-bs-dismiss="modal" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Flight Details</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+        </div>
+        <div class="modal-body">
+            <form >
+                <div class="mb-3">
+                  <label for="AirlinesName" class="form-label">Airlines Name</label>
+                  <input type="text" [(ngModel)]="flight2.airlines_name" #airlinesname="ngModel" name="airlines_name" class="form-control" id="AirlinesName" >
+                </div>
+                <div class="mb-3">
+                  <label for="FlightNumber" class="form-label">Flight Number</label>
+                  <input type="number" [(ngModel)]="flight2.flight_number" #flightnumber="ngModel" name="flight_number" class="form-control" id="FlightNumber">
+                </div>
+                <div class="mb-3">
+                    <label for="inputState" class="form-label">Flight Model</label>
+                    <select id="inputState" [(ngModel)]="flight2.flight_model" #flightmodel="ngModel" name="flight_model" class="form-select">
+                      <option selected>Choose...</option>
+                      <option>Boeing 777</option>
+                      <option>Boeing 760</option>
+                      <option>Boeing 805</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="inputState" class="form-label">Flight Type</label>
+                    <select id="inputState" [(ngModel)]="flight2.flight_type" #flighttype="ngModel" name="flight_type" class="form-select">
+                      <option selected>Choose...</option>
+                      <option>International</option>
+                      <option>Domestic</option>
+                    </select>
+                </div> 
+                <div class="mb-3">
+                    <label for="SeatsInEconomy" class="form-label">No of Seats in Economy Class</label>
+                    <input type="number" [(ngModel)]="flight2.no_of_seats_economy_class" #noofseatsineconomy="ngModel" name="no_of_seats_economy_class" class="form-control" id="SeatsInEconomy" >
+                </div>
+                <div class="mb-3">
+                    <label for="SeatsInBusiness" class="form-label">No of Seats in Business Class</label>
+                    <input type="number" [(ngModel)]="flight2.no_of_seats_business_class" #noofseatsinbusiness="ngModel" name="no_of_seats_business_class" class="form-control" id="SeatsInBusiness" >
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="updateFlight()"  data-bs-dismiss="modal" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

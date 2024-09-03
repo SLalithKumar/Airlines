@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        <h3 style="color:aliceblue;">Airlines Ticket Reservation System</h3>
+        <div class="d-flex gap-2">
+            <a routerLink="/home"><button type="button"  class="btn btn-success" >Home</button></a>
+            <a routerLink="/manageflight"><button type="button"  class="btn btn-success" >Manage Flight</button></a>
+            <a routerLink="/scheduleflight"><button type="button"  class="btn btn-success" >Schedule Flight</button></a>
+            <a routerLink="/bookingdetails"><button type="button"  class="btn btn-success" >Booking Details</button></a>
+            <a routerLink="/userdetails"><button type="button"  class="btn btn-success" >User Details</button></a>
+            <a routerLink="/viewfeedback" ><button type="button" class="btn btn-success">View Feedbacks</button></a>
+            <a ><button type="button" (click)="adminloggedout()" class="btn btn-success" >Logout</button></a>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

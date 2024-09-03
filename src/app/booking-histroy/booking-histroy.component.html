@@ -1,0 +1,24 @@
+<app-user-dashboard></app-user-dashboard>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Booking ID</th>
+            <th scope="col">User ID</th>
+            <th scope="col">Flight Number</th>
+            <th scope="col">Date of Travel</th>
+            <th scope="col">No of Passengers</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let history of history2" >
+            <td>{{history.booking_id}}</td>
+            <td>{{history.user_id}}</td>
+            <td>{{history.flight_number}}</td>
+            <td>{{history.date_of_travel}}</td>
+            <td>{{history.no_of_passengers}}</td>
+            
+            
+        </tr>
+    </tbody>
+</table>

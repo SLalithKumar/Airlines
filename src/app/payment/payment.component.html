@@ -1,0 +1,99 @@
+<app-user-dashboard></app-user-dashboard>
+<h3>Passenger Details</h3>
+
+<form>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Passenger Name</label>
+      <div class="col-sm-4">
+        <input type="text" name="passenger_name" [(ngModel)]="payment.passenger_name" class="form-control" id="inputEmail3">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Age</label>
+      <div class="col-sm-4">
+        <input type="number" name="passenger_age" [(ngModel)]="payment.passenger_age" class="form-control" id="inputPassword3">
+      </div>
+    </div>
+    <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" name="gender_of_passenger" [(ngModel)]="payment.gender_of_passenger" type="radio" name="gridRadios" id="gridRadios1" value="Male" checked>
+            <label class="form-check-label" for="gridRadios1">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="gender_of_passenger" [(ngModel)]="payment.gender_of_passenger" type="radio" name="gridRadios" id="gridRadios2" value="Female">
+            <label class="form-check-label" for="gridRadios2">
+              Female
+            </label>
+          </div>
+        </div>
+    </fieldset>
+    <div class="row mb-3">
+        <label for="inputEmail3"  class="col-sm-2 col-form-label">ID Proof</label>
+        <div class="col-sm-4">
+          <input type="text" name="passenger_id" [(ngModel)]="payment.passenger_id" class="form-control" id="inputEmail3">
+        </div>
+    </div>
+    <button type="submit"  (click)="totalcost()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Submit</button>
+  </form>
+  <pre></pre>
+  <div>
+    <a routerLink="/userfeedback"  ><button type="button" class="btn btn" style="background-color: black; color: white;" >Give Feedback</button></a>
+  </div>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h3>Amount : Rs. {{payment.total_amount}}</h3>
+            <div class="row mb-3">
+                <label for="inputEmail3"  class="col-sm-2 col-form-label">Mode Of Payment</label>
+                <div class="col-sm-4">
+                    <select id="inputState" name="mode_of_payment" [(ngModel)]="payment.mode_of_payment" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>Net Banking</option>
+                        <option>UPI</option>
+                    </select>
+                </div>  
+            </div>
+            <div class="row mb-3">
+                <label for="inputEmail3"  class="col-sm-2 col-form-label">Bank Name</label>
+                <div class="col-sm-4">
+                    <select id="inputState" name="bank_name" [(ngModel)]="payment.bank_name" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>HDFC</option>
+                        <option>Axis</option>
+                        <option>SBI</option>
+                        <option>ICICI</option>
+                    </select>
+                </div>  
+            </div>
+            <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Card Type</label>
+                <div class="col-sm-4">
+                    <select id="inputState" name="card_name" [(ngModel)]="payment.card_name" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>Credit</option>
+                        <option>Debit</option>
+                    </select>
+                </div>  
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addPayment()">Pay</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
